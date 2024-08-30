@@ -1,0 +1,8 @@
+HTCondor:
+
+wmarchive:
+  137 -- CMSSWStepFailure, details: ERROR:root:Attempting to kill step using SIGUSR2; Linux Return code: 137 (Out of memory)
+50115 -- BadFWJRXML, details: Error reading XML job report file, possibly corrupt XML File
+50660 -- PerformanceKill, details: Job has exceeded maxPSS: 16000 MB
+99108 -- Skipping this step due to a failure in a previous one.
+99999 -- killed

@@ -1,0 +1,34 @@
+[
+  {
+    "term": {
+      "data.steps.site": "T1_DE_KIT"
+    }
+  },
+  {
+    "term": {
+      "data.meta_data.jobstate": "jobfailed"
+    }
+  },
+  {
+    "wildcard": {
+      "data.meta_data.wn_name": "f03*"
+    }
+  },
+  {
+    "bool": {
+      "should": [
+        {
+          "term": {
+            "data.meta_data.jobtype": "Processing"
+          }
+        },
+        {
+          "term": {
+            "data.meta_data.jobtype": "Production"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+]

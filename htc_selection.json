@@ -1,0 +1,39 @@
+[
+  {
+    "term": {
+      "data.Site": "T1_DE_KIT"
+    }
+  },
+  {
+    "term": {
+      "data.MachineAttrCMSSubSiteName0": "KIT-T3"
+    }
+  },
+    {
+    "term": {
+      "data.ErrorType": "FileOpen"
+    }
+  },
+  {
+    "exists": {
+      "field": "data.CompletionDate"
+    }
+  },
+  {
+    "bool": {
+      "should": [
+        {
+          "term": {
+            "data.CMS_JobType": "Processing"
+          }
+        },
+        {
+          "term": {
+            "data.CMS_JobType": "Production"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "term": {
+      "data.Site": "T1_DE_KIT"
+    }
+  },
+    {
+    "term": {
+      "data.MachineAttrCMSSubSiteName0": "KIT-T3"
+    }
+  },
+  {
+    "exists": {
+      "field": "data.CompletionDate"
+    }
+  },
+  {
+    "bool": {
+      "should": [
+        {
+          "term": {
+            "data.CMS_JobType": "Processing"
+          }
+        },
+        {
+          "term": {
+            "data.CMS_JobType": "Production"
+          }
+        }
+      ],
+            "must_not": [
+        {
+          "match_phrase": {
+            "data.ErrorType": "Success"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+]
